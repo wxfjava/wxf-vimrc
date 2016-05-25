@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'https://github.com/majutsushi/tagbar.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -124,7 +125,7 @@ filetype plugin indent on
 " 分为三部分命令：file on, file plugin on, file indent on.分别表示自动识别文件类型，用文件类型脚本，使用缩进定义文件。
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vundle plugin 
+" => NERDTree 
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin 'https://github.com/scrooloose/nerdtree.git'
 
@@ -145,3 +146,9 @@ autocmd VimEnter * wincmd w
 autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Tagbar
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F12> :TagbarToggle<CR>
+map! <F12> <Esc>:TagbarToggle<CR>
