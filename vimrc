@@ -1,9 +1,25 @@
-set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438
@@ -106,3 +122,19 @@ set whichwrap=b,s,<,>,[,]
 
 filetype plugin indent on
 " 分为三部分命令：file on, file plugin on, file indent on.分别表示自动识别文件类型，用文件类型脚本，使用缩进定义文件。
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vundle plugin 
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin 'https://github.com/scrooloose/nerdtree.git'
+
+map <F1> :NERDTreeToggle<CR>
+map <C-F1> :NERDTreeFind<CR>
+let NERDTreeChDirMode=2 "选中root即设置为当前目录
+" let NERDTreeQuitOnOpen=1 "打开文件时关闭树
+let NERDTreeShowBookmarks=1 "显示书签
+let NERDTreeMinimalUI=1 "不显示帮助面板
+let NERDTreeDirArrows=1 "目录箭头 1 显示箭头 0传统+-|号
+let NERDTreeShowLineNumbers=1
+let NERDTreeWinPos='left'
+autocmd vimenter * NERDTree " 自动打开树
