@@ -123,7 +123,7 @@ set whichwrap=b,s,<,>,[,]
 filetype plugin indent on
 " 分为三部分命令：file on, file plugin on, file indent on.分别表示自动识别文件类型，用文件类型脚本，使用缩进定义文件。
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle plugin 
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin 'https://github.com/scrooloose/nerdtree.git'
@@ -137,4 +137,11 @@ let NERDTreeMinimalUI=1 "不显示帮助面板
 let NERDTreeDirArrows=1 "目录箭头 1 显示箭头 0传统+-|号
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos='left'
-autocmd vimenter * NERDTree " 自动打开树
+autocmd VimEnter * NERDTree " 自动打开树
+wincmd w "切换编辑区域
+autocmd VimEnter * wincmd w
+
+" Automatically open a NERDTree if no files where specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
