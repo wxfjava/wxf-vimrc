@@ -1,3 +1,10 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438
 
