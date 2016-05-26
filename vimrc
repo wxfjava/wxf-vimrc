@@ -144,10 +144,10 @@ let NERDTreeShowBookmarks=1 "显示书签
 let NERDTreeMinimalUI=1 "不显示帮助面板
 let NERDTreeDirArrows=1 "目录箭头 1 显示箭头 0传统+-|号
 let NERDTreeShowLineNumbers=1
-"let NERDTreeWinPos='left'
-"autocmd VimEnter * NERDTree " 自动打开树
-"wincmd w "切换编辑区域
-"autocmd VimEnter * wincmd w
+let NERDTreeWinPos='left'
+autocmd VimEnter * NERDTree " 自动打开树
+wincmd w "切换编辑区域
+autocmd VimEnter * wincmd w
 
 " Automatically open a NERDTree if no files where specified
 "autocmd vimenter * if !argc() | NERDTree | endif
