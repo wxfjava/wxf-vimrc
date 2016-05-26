@@ -1,4 +1,5 @@
-
+call pathogen#infect()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -7,11 +8,15 @@ call vundle#begin()
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/majutsushi/tagbar.git'
+Plugin 'https://github.com/fholgado/minibufexpl.vim.git'
+Plugin 'winmanager'
+Plugin 'https://github.com/vim-airline/vim-airline.git'
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+" filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -34,7 +39,7 @@ set backspace=2		" more powerful backspacing
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 " 语法高亮
 
@@ -78,7 +83,9 @@ set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1
 " 编码设置
 
-colorscheme torte
+"colorscheme solarized
+colorscheme monokai
+"colorscheme torte
 " 设置颜色主题
 
 "set guifont=Menlo:h16:cANSI
@@ -137,18 +144,38 @@ let NERDTreeShowBookmarks=1 "显示书签
 let NERDTreeMinimalUI=1 "不显示帮助面板
 let NERDTreeDirArrows=1 "目录箭头 1 显示箭头 0传统+-|号
 let NERDTreeShowLineNumbers=1
-let NERDTreeWinPos='left'
-autocmd VimEnter * NERDTree " 自动打开树
-wincmd w "切换编辑区域
-autocmd VimEnter * wincmd w
+"let NERDTreeWinPos='left'
+"autocmd VimEnter * NERDTree " 自动打开树
+"wincmd w "切换编辑区域
+"autocmd VimEnter * wincmd w
 
 " Automatically open a NERDTree if no files where specified
-autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd vimenter * if !argc() | NERDTree | endif
 " Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tagbar
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F12> :TagbarToggle<CR>
 map! <F12> <Esc>:TagbarToggle<CR>
+let g:tagbar_vertical = 30
+let g:tagbar_expand = 1
+let g:tagbar_foldlevel = 2
+let g:tagbar_autoshowtag = 1
+
+let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
+let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
+let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => winManager
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => MiniBufExplorer
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
