@@ -1,4 +1,4 @@
-call pathogen#infect()
+"call pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off                  " required
 
@@ -8,10 +8,10 @@ call vundle#begin()
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/majutsushi/tagbar.git'
-Plugin 'https://github.com/fholgado/minibufexpl.vim.git'
-Plugin 'winmanager'
+"Plugin 'https://github.com/fholgado/minibufexpl.vim.git'
+"Plugin 'winmanager'
 Plugin 'https://github.com/vim-airline/vim-airline.git'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+"Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -159,14 +159,14 @@ autocmd VimEnter * wincmd w
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F12> :TagbarToggle<CR>
 map! <F12> <Esc>:TagbarToggle<CR>
-let g:tagbar_vertical = 30
-let g:tagbar_expand = 1
-let g:tagbar_foldlevel = 2
-let g:tagbar_autoshowtag = 1
+"let g:tagbar_vertical = 30
+"let g:tagbar_expand = 1
+"let g:tagbar_foldlevel = 2
+"let g:tagbar_autoshowtag = 1
 
-let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
-let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
-let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
+"let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
+"let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
+"let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => winManager
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
