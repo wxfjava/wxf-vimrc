@@ -179,3 +179,14 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => MiniBufExplorer
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+setlocal omnifunc=javacomplete#Complete
+autocmd Filetype java set omnifunc=javacomplete#Complete                        "这一句是自动补全（好像是）
+autocmd Filetype java set completefunc=javacomplete#CompleteParamsInf  " 这一句是参数提示，好像不太好用，
+
+inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P> 
+inoremap <buffer> <C-S-Space> <C-X><C-U><C-P>
+autocmd Filetype java,JavaScript,jsp inoremap <buffer> <C-X><C-O><C-P>  "这一句实现在vim 编辑java 文件 时当敲入.
