@@ -13,6 +13,9 @@ Plugin 'https://github.com/majutsushi/tagbar.git'
 Plugin 'https://github.com/vim-airline/vim-airline.git'
 "Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'https://github.com/artur-shaik/vim-javacomplete2.git'
+Plugin 'https://github.com/cohama/vim-insert-linenr.git'
+"Plugin 'https://github.com/Lokaltog/vim-powerline.git'
+Plugin 'https://github.com/takac/vim-hardtime.git'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,6 +46,8 @@ au BufWrite /private/etc/pw.* set nowritebackup nobackup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 " 语法高亮
+let java_highlight_java_lang_ids=1
+let java_highlight_functions="style"
 
 autocmd InsertLeave * se nocul
 autocmd InsertEnter * se cul
@@ -70,6 +75,8 @@ set shiftwidth=4
 set number
 " 显示行号
 
+set relativenumber
+
 set history=50
 " 历史纪录数
 
@@ -89,7 +96,7 @@ colorscheme monokai
 "colorscheme torte
 " 设置颜色主题
 
-"set guifont=Menlo:h16:cANSI
+"set guifont=Menlo:h16:cANSI:Cousine
 " 设置字体
 
 set langmenu=zn_CN.UTF-8
@@ -192,3 +199,14 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "inoremap <buffer> <C-X><C-U> <C-X><C-U><C-P> 
 "inoremap <buffer> <C-S-Space> <C-X><C-U><C-P>
 "autocmd FileType java,javascript,jsp inoremap <buffer> . .<C-X><C-O><C-P>
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Airline
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts=1
+let g:airline_theme='badwolf' "hybridline
+
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Airline
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:hardtime_default_on = 1
