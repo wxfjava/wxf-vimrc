@@ -98,6 +98,7 @@ colorscheme monokai
 
 "set guifont=Menlo:h16:cANSI:Cousine
 " 设置字体
+set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline
 
 set langmenu=zn_CN.UTF-8
 set helplang=cn
@@ -156,6 +157,7 @@ let NERDTreeWinPos='left'
 autocmd VimEnter * NERDTree " 自动打开树
 wincmd w "切换编辑区域
 autocmd VimEnter * wincmd w
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Automatically open a NERDTree if no files where specified
 "autocmd vimenter * if !argc() | NERDTree | endif
@@ -205,6 +207,7 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts=1
 let g:airline_theme='badwolf' "hybridline
+"let g:airline_symbols= 'Droid\ Sans\ Mono\ Dotted\ for\ Powerline'
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline
